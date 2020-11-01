@@ -15,11 +15,11 @@ jobs:
     - name: Run Script
       run: |
         # (gwmi -class win32_terminalservicesetting -namespace "root\cimv2\terminalservices").setallowtsconnections(1)
-        Get-LocalUser
-        Get-NetFirewallRule -Name RemoteDesktop* | Set-NetFirewallRule -Enabled true
-        Password = Read-Host “Enter the new password” -AsSecureString
-        $UserAccount = Get-LocalUser -Name “runneradmin”
-        $UserAccount | Set-LocalUser -Password $Password
+        # Get-LocalUser
+        # Get-NetFirewallRule -Name RemoteDesktop* | Set-NetFirewallRule -Enabled true
+        # Password = Read-Host “Enter the new password” -AsSecureString
+        # $UserAccount = Get-LocalUser -Name “runneradmin”
+        # $UserAccount | Set-LocalUser -Password $Password
         # net user runneradmin ${{ secrets.PASSWORD }} /add
         powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
         7z x ngrok.zip
