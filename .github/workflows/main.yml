@@ -14,7 +14,9 @@ jobs:
 
     - name: Run Script
       run: |
+        whoami
+        reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
         powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
         7z x ngrok.zip
-        dir
-        
+        ngrok.exe authtoken ${{ secrets.NGROK_TOKEN }}
+        ngrok.exe tcp 3389
