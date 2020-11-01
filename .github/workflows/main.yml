@@ -5,7 +5,8 @@ on:
     branches: [ main ]
 
 jobs:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest
 
     steps:
     - name: Checkout
