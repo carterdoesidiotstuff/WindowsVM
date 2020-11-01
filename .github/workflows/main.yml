@@ -1,0 +1,19 @@
+name: Windows (ngrok)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Instance:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: Run Script
+      run: |
+        powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
+        7z x ngrok.zip
+        dir
+        
