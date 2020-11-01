@@ -14,7 +14,7 @@ jobs:
 
     - name: Run Script
       run: |
-        (gwmi -class win32_terminalservicesetting -namespace "root\cimv2\terminalservices").setallowtsconnections(1)
+        # (gwmi -class win32_terminalservicesetting -namespace "root\cimv2\terminalservices").setallowtsconnections(1)
         Get-LocalUser
         Get-NetFirewallRule -Name RemoteDesktop* | Set-NetFirewallRule -Enabled true
         Password = Read-Host “Enter the new password” -AsSecureString
