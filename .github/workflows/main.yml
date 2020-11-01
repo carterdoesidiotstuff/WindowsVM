@@ -1,10 +1,10 @@
 name: Windows (ngrok)
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
-  Instance:
     runs-on: windows-latest
 
     steps:
