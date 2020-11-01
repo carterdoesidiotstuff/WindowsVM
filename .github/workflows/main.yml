@@ -28,3 +28,4 @@ jobs:
         # cd D:\a\WindowsVM\WindowsVM
         # ngrok.exe tcp 3389
         Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+        ipconfig
