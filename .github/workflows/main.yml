@@ -21,7 +21,7 @@ jobs:
         # $UserAccount = Get-LocalUser -Name “runneradmin”
         # $UserAccount | Set-LocalUser -Password $Password
         # net user runneradmin ${{ secrets.PASSWORD }} /add
-        powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
+        # powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
         7z x ngrok.zip
         # cd D:\a\WindowsVM\WindowsVM
         ngrok.exe authtoken ${{ secrets.NGROK_TOKEN }}
