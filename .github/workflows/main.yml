@@ -22,8 +22,9 @@ jobs:
         # $UserAccount | Set-LocalUser -Password $Password
         # net user runneradmin ${{ secrets.PASSWORD }} /add
         # powershell -command "& { iwr https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip }"
-        7z x ngrok.zip
+        # 7z x ngrok.zip
         # cd D:\a\WindowsVM\WindowsVM
-        ngrok.exe authtoken ${{ secrets.NGROK_TOKEN }}
+        # ngrok.exe authtoken ${{ secrets.NGROK_TOKEN }}
         # cd D:\a\WindowsVM\WindowsVM
-        ngrok.exe tcp 3389
+        # ngrok.exe tcp 3389
+        Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
